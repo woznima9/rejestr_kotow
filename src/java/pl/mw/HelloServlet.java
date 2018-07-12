@@ -28,19 +28,18 @@ public class HelloServlet extends HttpServlet {
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
 
-        writer.println("<div>Otrzymane parametry przekazane linią URL:</div>");
+        writer.println("<div><h2>Otrzymane parametry przekazane linią URL:</h2></div>");
+        writer.println("<div>ODCZYTANE PARAMETRY-");
         for (String key : parameterMap.keySet()) {
-            System.out.println(key);
-            writer.println("<div>");
-            writer.println(key);
-            writer.println("</div>");
+            writer.print("<p>");
+            writer.print(key+":&nbsp ");
+
             for (String value : parameterMap.get(key)) {
-                System.out.println(" - " + value);
-                writer.println("<div>");
-                writer.println("&nbsp&nbsp-&nbsp"+value);
-                writer.println("</div>");
+                writer.print(value + ",&nbsp ");
             }
+            writer.println("</p>");
         }
-        writer.println("</html>");
+        writer.println("</div>");
+        writer.print("</html>");
     }
 }
