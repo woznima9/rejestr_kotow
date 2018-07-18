@@ -1,0 +1,17 @@
+div {
+    background-color: aqua;
+}
+h1{
+    color: darkblue;
+}
+h2{
+    color: darkred;
+}
+h3{
+    color: darkviolet;
+}
+.menu{
+    background-color: yellow;
+    /*box-sizing: content-box;*/
+    width: fit-content;
+}

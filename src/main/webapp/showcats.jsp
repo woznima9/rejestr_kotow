@@ -10,6 +10,7 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
+    <link rel="stylesheet" href="/html_css/style.css">
     <title>Utworzone Koty</title>
 </head>
 <body>
@@ -17,6 +18,10 @@
 <h1>Utworzone koty</h1><br>
 <p>imię utworzonego kota ${catname}</p>
 <p>wiek utworzonego kota ${requestScope.catage}</p>
+<br>
+<jsp:include page="menu.jsp"/>
 
 </body>
+
+
 </html>

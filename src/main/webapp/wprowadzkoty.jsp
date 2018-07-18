@@ -9,19 +9,18 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
+    <link rel="stylesheet" href="/html_css/style.css">
     <title>Dodaj Kotka</title>
 </head>
 <body>
 <h1>Strona tworzenia kotów</h1>
 <div>Utwórz kota formularzem i prześlij do serwleta. </br>W odpowiedzi dostaniesz listę utworzonych kotów</div>
 <form method="POST" action="/catcreate">
-    <input type="text" name="catname" value="Rudy" /><br>
-    <input type="number" name="catage" value="6"/><br>
-    <input type="submit" value="SUbmit" name="submit"/>
+    <p>wprowadź imię kota <input type="text" name="catname" value="Rudy" /></p><br><br>
+
+    <p>wprowadź wiek kota <input type="number" name="catage" value="6"/></p><br><br>
+    <input type="submit" value="ENTER" name="submit"/>
 </form>
-<%--<p>imię kota ${requestScope.catname}</p>--%>
-
-
 
 </body>
 </html>
