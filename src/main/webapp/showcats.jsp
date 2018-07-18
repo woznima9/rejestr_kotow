@@ -1,27 +1,35 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Komp
-  Date: 2018-07-18
-  Time: 11:09
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="pl.mw.model.Cat" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@ page isELIgnored="false" %>
-<html>
+<html lang="pl">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="/html_css/style.css">
-    <title>Utworzone Koty</title>
+    <title>REJESTR</title>
 </head>
 <body>
 
-<h1>Utworzone koty</h1><br>
-<p>imię utworzonego kota ${catname}</p>
-<p>wiek utworzonego kota ${requestScope.catage}</p>
+<h1>Zarejestrowane koty</h1><br>
+<p>Lista kotów pobierana do tej strony: ${catname} </p>
 <br>
-<jsp:include page="menu.jsp"/>
+<% ArrayList<Cat> catArrayList = (ArrayList<Cat>) request.getAttribute("catname"); %>
+<br>
+<p>TABLICA KOTÓW</p>
+<table border="1">
+    <% for (Cat cat : catArrayList) { %>
+    <tr>
+        <td width="30"><%=cat.getName()%>
+        </td>
+        <td width="30"><%=cat.getAge()%>
+        </td>
+        <%}%>
+    </tr>
+</table>
+
+<br>
+<p><a href="./index.jsp">POWRÓT</a></p>
 
 </body>
-
-
 </html>

@@ -1,6 +1,6 @@
-div {
-    background-color: aqua;
-}
+/*div {*/
+    /*background-color: aqua;*/
+/*}*/
 h1{
     color: darkblue;
 }
@@ -14,4 +14,13 @@ h3{
     background-color: yellow;
     /*box-sizing: content-box;*/
     width: fit-content;
+}
+.container{
+    background-color: antiquewhite;
+}
+#back-color-yellow{
+    background-color: yellow;
+}
+#instruction{
+    color: darkviolet;
 }

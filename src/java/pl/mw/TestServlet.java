@@ -31,5 +31,8 @@ public class TestServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("metoda doGet()");
+        String servletInfo="Ten servlet jeszcze nic nie robi (polskie Łódź)";
+        request.setAttribute("servletinfo", servletInfo);
+        request.getRequestDispatcher("/tese.jsp").forward(request, response);
     }
 }

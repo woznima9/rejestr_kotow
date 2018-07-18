@@ -7,11 +7,14 @@
 </head>
 <body>
 
-<h3>Aplikacja zarządzania kotami (index.jsp)</h3>
-<p>Ta strona uruchamia się jako pierwsza ponieważ jest to index.jsp</p>
-<div>przejdź do Servletu opcją 3</div>
+<h1>Rejestr kotów</h1>
+<div class="container" id="detail-panel">
+<p>Jeśli zobaczysz kota zarejestruj go w aplikacji<br>nadając mu imię oraz określając jego wiek</p>
+</div>
+<div id="instruction">Instrukcja:<br>- 1 przejście do tego ekranu<br>- 2 sprawdzenie odwołania do czystej strony html
+<br>- 3 sprawdzenie odwołania do servletu tese (TODO)<br>- 4 zarejestrowanie kota<br>- 5 przegląd zarejestrowanych kotów
+</div>
 <br>
 <jsp:include page="menu.jsp"/>
-
 </body>
 </html>
