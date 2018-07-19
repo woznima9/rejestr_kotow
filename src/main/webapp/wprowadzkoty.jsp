@@ -8,6 +8,8 @@
 </head>
 <body>
 <h1>Dodawanie kota do ewidencji</h1>
+<jsp:include page="menu.jsp"/>
+<br>
 <div>Zauważonemu kotu nadaj imię i określ wiek.<br>Za pomocą formularza prześlij dane do rejestru</br>W odpowiedzi dostaniesz
     listę utworzonych kotów
 </div>

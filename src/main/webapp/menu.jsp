@@ -1,10 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<h2>MENU</h2>
-<div class="menu">
-    <p><a href="./index.jsp">1. Home</a></p>
-    <p><a href="./kotyinfo.jsp">1. Z życia kotów -kilka informacji</a></p>
-    <p><a href="./slawnekoty.html">2. Sławne koty (strona tylko html)</a></p>
-    <p><a href="./tese">3. SERVLET /tese -TODO</a></p>
-    <p><a href="./catcreate">4. Zarejestruj kota</a></p>
-    <p><a href="./catreport">5. Sprawdź zarejestrowane koty</a></p>
-</div>
+<header>
+    <a href="http://localhost:8080/"><img src="./resources/kot-logo.png" alt="logo rejestru kotów" width="150"
+                                          align="right"></a>
+    <br>
+    <table class=menu width="100%" border="1">
+        <tr>
+            <th scope="col" colspan="6">menu</th>
+        </tr>
+        <tr>
+
+            <td width="16%"><a href="./index.jsp">
+                <center>Home</center>
+            </a></td>
+            <td width="16%"><a href="./kotyinfo.jsp">
+                <center>Z życia kotów</center>
+            </a></td>
+            <td width="16%"><a href="./slawnekoty.html">
+                <center>Sławne koty</center>
+            </a></td>
+            <td width="16%"><a href="./tese">SERVLET /tese-TODO</a></td>
+            <td width="16%"><a href="./catcreate">Zarejestruj kota</a></td>
+            <td width="16%"><a href="./catreport">Wykaz zarejestrowanych</a></td>
+        </tr>
+    </table>
+</header>

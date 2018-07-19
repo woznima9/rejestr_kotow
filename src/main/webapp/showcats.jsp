@@ -11,25 +11,32 @@
 </head>
 <body>
 
-<h1>Zarejestrowane koty</h1><br>
-<p>Lista kotów pobierana do tej strony: ${catname} </p>
+<h1>Zarejestrowane koty</h1>
+<jsp:include page="menu.jsp"/>
+
+
+<%--<p>Lista kotów pobierana do tej strony: ${catname} </p>--%>
 <br>
 <% ArrayList<Cat> catArrayList = (ArrayList<Cat>) request.getAttribute("catname"); %>
 <br>
 <p>TABLICA KOTÓW</p>
-<table border="1">
+<table border="3">
+    <tr>
+    <th></th>
+    <th scope="col">nadane imię</th>
+    <th scope="col">oszacowany wiek</th>
+</tr>
     <% for (Cat cat : catArrayList) { %>
     <tr>
-        <td width="30"><%=cat.getName()%>
+        <th scope="row">numer kota</th>
+        <td width="50"><%=cat.getName()%>
         </td>
-        <td width="30"><%=cat.getAge()%>
+        <td width="50"><%=cat.getAge()%>
         </td>
         <%}%>
     </tr>
 </table>
 
-<br>
-<p><a href="./index.jsp">POWRÓT</a></p>
 
 </body>
 </html>

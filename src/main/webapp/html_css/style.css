@@ -1,6 +1,4 @@
-/*div {*/
-    /*background-color: aqua;*/
-/*}*/
+
 h1{
     color: darkblue;
 }
@@ -11,7 +9,7 @@ h3{
     color: darkviolet;
 }
 .menu{
-    background-color: yellow;
+    background-color: azure;
     /*box-sizing: content-box;*/
     width: fit-content;
 }
