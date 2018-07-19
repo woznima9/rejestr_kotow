@@ -5,22 +5,23 @@
     <br>
     <table class=menu width="100%" border="1">
         <tr>
-            <th scope="col" colspan="6">menu</th>
+            <th scope="col" colspan="7">menu</th>
         </tr>
         <tr>
 
-            <td width="16%"><a href="./index.jsp">
+            <td width="10%"><a href="./index.jsp">
                 <center>Home</center>
             </a></td>
-            <td width="16%"><a href="./kotyinfo.jsp">
+            <td width="10%"><a href="./kotyinfo.jsp">
                 <center>Z życia kotów</center>
             </a></td>
-            <td width="16%"><a href="./slawnekoty.html">
+            <td width="10%"><a href="./slawnekoty.html">
                 <center>Sławne koty</center>
             </a></td>
-            <td width="16%"><a href="./tese">SERVLET /tese-TODO</a></td>
-            <td width="16%"><a href="./catcreate">Zarejestruj kota</a></td>
-            <td width="16%"><a href="./catreport">Wykaz zarejestrowanych</a></td>
+            <td width="10%"><a href="./addpersserv">DODAJ opiekuna</a></td>
+            <td width="10%"><a href="./showpersserv">Opiekunowie</a></td>
+            <td width="10%"><a href="./catcreate">Zarejestruj kota</a></td>
+            <td width="10%"><a href="./catreport">Wykaz zarejestrowanych</a></td>
         </tr>
     </table>
 </header>
