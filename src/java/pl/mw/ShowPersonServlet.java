@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ShowPersonServlet", value="/showpersserv")
+@WebServlet(name = "ShowPersonServlet", value = "/showpersserv")
 public class ShowPersonServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -17,7 +17,14 @@ public class ShowPersonServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("header", "SHOW_PERSONS");
-        SqliteJDBCDriverConnection.connect();
-        request.getRequestDispatcher("/showPersons.jsp").forward(request,response);
+        try {
+            SqliteJDBCDriverConnection db = new SqliteJDBCDriverConnection();
+//            System.out.println(db.listPersons());
+            request.setAttribute("listpersons", db.listPersons());
+            db.closeConnection();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        request.getRequestDispatcher("/showPersons.jsp").forward(request, response);
     }
 }

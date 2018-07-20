@@ -1,27 +1,53 @@
 package pl.mw.drivers;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import javax.swing.*;
-public class SqliteJDBCDriverConnection {
 
-    public static void connect() {
-        Connection conn = null;
+public class SqliteJDBCDriverConnection {
+    Connection conn = null;
+    Statement stmt = null;
+
+    public SqliteJDBCDriverConnection() throws ClassNotFoundException {
+        // try connect to db
         try {
-            String url = "jdbc:sqlite:../resource/peopleDatabase.db";
+            Class.forName("org.sqlite.JDBC");
+
+            String url = "jdbc:sqlite:\\sqlite\\peopleDatabase.db";
             conn = DriverManager.getConnection(url);
+
             System.out.println("Połączenie do SQLite zestawione");
+          //  conn.close();
         } catch (SQLException e) {
-            System.out.println("moje "+e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println("moje2 "+ex.getMessage());
+            System.out.println("moje " + e.getMessage());
+        }
+    }
+
+    public ArrayList<String> listPersons() {
+        ArrayList<String> wynik= new ArrayList<>();
+        try {
+            this.stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM people");
+            while (rs.next()) {
+                String name = rs.getString("Name");
+                String surname = rs.getString("Surname");
+                int bornYear = rs.getInt("BornYear");
+                int phone = rs.getInt("Phone");
+                String sex = rs.getString("Sex");
+                String linia= name + " " + surname + " " + bornYear;
+                wynik.add(linia);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return wynik;
+    }
+
+    public void closeConnection() {
+        try {
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("error");
         }
     }
 }

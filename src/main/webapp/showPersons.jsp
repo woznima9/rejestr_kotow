@@ -17,5 +17,6 @@
 <div>Zarejestrowane osoby</div>
 <br>
 tu będzie wynik zapytania SQL
+<p><%=request.getAttribute("listpersons")%></p>
 </body>
 </html>
