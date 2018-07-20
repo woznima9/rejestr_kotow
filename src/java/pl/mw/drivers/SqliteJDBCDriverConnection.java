@@ -9,7 +9,6 @@ public class SqliteJDBCDriverConnection {
     Statement stmt = null;
 
     public SqliteJDBCDriverConnection() throws ClassNotFoundException {
-        // try connect to db
         try {
             Class.forName("org.sqlite.JDBC");
 
@@ -17,14 +16,14 @@ public class SqliteJDBCDriverConnection {
             conn = DriverManager.getConnection(url);
 
             System.out.println("Połączenie do SQLite zestawione");
-          //  conn.close();
+            //  conn.close();
         } catch (SQLException e) {
             System.out.println("moje " + e.getMessage());
         }
     }
 
     public ArrayList<String> listPersons() {
-        ArrayList<String> wynik= new ArrayList<>();
+        ArrayList<String> wynik = new ArrayList<>();
         try {
             this.stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM people");
@@ -34,7 +33,7 @@ public class SqliteJDBCDriverConnection {
                 int bornYear = rs.getInt("BornYear");
                 int phone = rs.getInt("Phone");
                 String sex = rs.getString("Sex");
-                String linia= name + " " + surname + " " + bornYear;
+                String linia = name + " " + surname + " " + bornYear+" "+phone+" "+sex;
                 wynik.add(linia);
             }
         } catch (SQLException e) {
@@ -43,11 +42,23 @@ public class SqliteJDBCDriverConnection {
         return wynik;
     }
 
+    public void insertDataToSQLite(String query) {
+        try {
+            this.stmt = conn.createStatement();
+            int in = stmt.executeUpdate(query);
+            System.out.println("Dodano do bazy " + in + " rekord");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
     public void closeConnection() {
         try {
             conn.close();
         } catch (Exception e) {
-            System.out.println("error");
+            System.out.println("Error");
         }
     }
 }

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <html>
 <head>
     <title>ShowPersons</title>
@@ -14,9 +15,13 @@
 <h1>Baza danych opiekunów kotów</h1>
 <jsp:include page="menu.jsp"/>
 <p><%=request.getAttribute("header")%></p>
+<jsp:text>Text z sekcji jsp ${db.listPersons()}</jsp:text>
 <div>Zarejestrowane osoby</div>
 <br>
 tu będzie wynik zapytania SQL
 <p><%=request.getAttribute("listpersons")%></p>
+
+
+
 </body>
 </html>
