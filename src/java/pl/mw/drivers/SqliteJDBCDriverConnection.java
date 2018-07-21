@@ -1,5 +1,7 @@
 package pl.mw.drivers;
 
+import pl.mw.model.Person;
+
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.*;
@@ -22,8 +24,9 @@ public class SqliteJDBCDriverConnection {
         }
     }
 
-    public ArrayList<String> listPersons() {
+    public ArrayList<Person> listPersons() {
         ArrayList<String> wynik = new ArrayList<>();
+        ArrayList<Person> personArrayList = new ArrayList<>();
         try {
             this.stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM people");
@@ -33,13 +36,12 @@ public class SqliteJDBCDriverConnection {
                 int bornYear = rs.getInt("BornYear");
                 int phone = rs.getInt("Phone");
                 String sex = rs.getString("Sex");
-                String linia = name + " " + surname + " " + bornYear+" "+phone+" "+sex;
-                wynik.add(linia);
+                personArrayList.add(new Person(name, surname, bornYear, phone, sex));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return wynik;
+        return personArrayList;
     }
 
     public void insertDataToSQLite(String query) {

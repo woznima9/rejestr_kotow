@@ -12,12 +12,14 @@ import java.util.ArrayList;
 
 @WebServlet(name = "CatCreateServlet", value = "/catcreate")
 public class CatCreateServlet extends HttpServlet {
-    static ArrayList<Cat> koty=new ArrayList<>();
+    static ArrayList<Cat> koty = new ArrayList<>();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         System.out.println("POST w /catcreate");
-        koty.add(new Cat(request.getParameter("catname"),Integer.parseInt(request.getParameter("catage"))));
+        koty.add(new Cat(request.getParameter("catname"), Integer.parseInt(request.getParameter("catage"))));
         request.setAttribute("catname", koty);
-        System.out.println("testowo lista do przekazania"+koty.toString());
+        System.out.println("testowo lista do przekazania" + koty.toString());
         request.getRequestDispatcher("/showcats.jsp").forward(request, response);
     }
 

@@ -22,10 +22,10 @@
 <p>TABLICA KOTÓW</p>
 <table border="3">
     <tr>
-    <th></th>
-    <th scope="col">nadane imię</th>
-    <th scope="col">oszacowany wiek</th>
-</tr>
+        <th></th>
+        <th scope="col">nadane imię</th>
+        <th scope="col">oszacowany wiek</th>
+    </tr>
     <% for (Cat cat : catArrayList) { %>
     <tr>
         <th scope="row">numer kota</th>

@@ -32,7 +32,7 @@ public class HelloServlet extends HttpServlet {
         writer.println("<div>ODCZYTANE PARAMETRY-");
         for (String key : parameterMap.keySet()) {
             writer.print("<p>");
-            writer.print(key+":&nbsp ");
+            writer.print(key + ":&nbsp ");
 
             for (String value : parameterMap.get(key)) {
                 writer.print(value + ",&nbsp ");

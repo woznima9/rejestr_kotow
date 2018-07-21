@@ -8,20 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "TestServlet", value=("/tese"))
+@WebServlet(name = "TestServlet", value = ("/tese"))
 public class TestServlet extends HttpServlet {
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
-    public TestServlet(){
+    public TestServlet() {
         super();
         System.out.println("Konstruktor TestServlet()");
     }
 
-    public void init(ServletConfig config) throws ServletException{
+    public void init(ServletConfig config) throws ServletException {
         System.out.println("metoda init()");
     }
 
-    public void destroy(){
+    public void destroy() {
         System.out.println("metoda destroy()");
     }
 
@@ -31,7 +31,7 @@ public class TestServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("metoda doGet()");
-        String servletInfo="Ten servlet jeszcze nic nie robi (polskie Łódź)";
+        String servletInfo = "Ten servlet jeszcze nic nie robi (polskie Łódź)";
         request.setAttribute("servletinfo", servletInfo);
         request.getRequestDispatcher("/tese.jsp").forward(request, response);
     }
