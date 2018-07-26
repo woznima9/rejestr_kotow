@@ -1,3 +1,4 @@
+/* opis */
 package pl.mw.model;
 
 public class Cat {
